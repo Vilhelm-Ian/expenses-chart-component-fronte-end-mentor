@@ -1,3 +1,5 @@
+@use "config";
+
 html,
 body {
   padding: 0;
@@ -7,4 +9,5 @@ body {
       Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     size: (18/16) * 1rem;
   }
+  background: config.$cream;
 }

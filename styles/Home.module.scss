@@ -1,0 +1,14 @@
+@use "config";
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.expense {
+  @include config.card;
+  background: config.$soft-red;
+}
+

@@ -9,3 +9,12 @@ $very-pale-orange: hsl(33, 100%, 98%);
 
 $default-weight: 400;
 $heavier-weight: 700;
+
+@mixin card {
+	border {
+		radius: 8px;
+	}
+	position: absolute;
+	padding: 0.5rem;
+	width: 90%;
+}
