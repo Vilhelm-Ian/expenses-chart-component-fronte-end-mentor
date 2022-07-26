@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <div className={styles.expense}>
           <div className={styles.expense__left}>
             <p>My balance</p>
-            <p className="Balance"></p>
+            <p className="balance">$900</p>
           </div>
           <img src="/images/logo.svg"></img>
         </div>

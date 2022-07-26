@@ -1,6 +1,7 @@
 @use "config";
 
 .container {
+  width: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,6 +10,7 @@
 
 .expense {
   @include config.card;
+  justify-content: space-around;
   background: config.$soft-red;
 }
 
