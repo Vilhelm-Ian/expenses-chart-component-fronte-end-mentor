@@ -14,3 +14,13 @@
   background: config.$soft-red;
 }
 
+.history {
+  @include config.card;
+  flex-direction: column;
+  background: config.$very-pale-orange;
+
+  &__month {
+    display: flex;
+  justify-content: space-around;
+  }
+}

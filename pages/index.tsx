@@ -19,12 +19,13 @@ const Home: NextPage = () => {
           </div>
           <img src="/images/logo.svg"></img>
         </div>
-        <div className="history">
+        <div className={styles.history}>
           <h2>Spending last 7 days</h2>
           <div className="chart"></div>
-          <div className="history__month">
+          <div className={styles.history__month}>
             <div className="history__month__this">
               <p>Total this month</p>
+              <p>$470</p>
             </div>
             <div className="history__month__last">
               <p>%</p>
