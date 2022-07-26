@@ -2,8 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import { useMemo } from "react";
+import Column from "../components/collumn";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ data }) => {
+  const graph = useMemo(
+    () => data.map((element, index) => <Column key={index} />),
+    []
+  );
   return (
     <div className={styles.container}>
       <Head>
@@ -27,6 +33,7 @@ const Home: NextPage = () => {
               <p>Total this month</p>
               <p>$470</p>
             </div>
+            <div className={styles.graph}>{graph}</div>
             <div className="history__month__last">
               <p>%</p>
               <p>From last month</p>
@@ -37,5 +44,14 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  let res = await fetch("http:localhost:3000/api/data");
+  let data = await res.json();
+
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
 
 export default Home;
