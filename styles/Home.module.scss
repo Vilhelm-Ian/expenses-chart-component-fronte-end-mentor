@@ -12,6 +12,11 @@
   @include config.card;
   justify-content: space-around;
   background: config.$soft-red;
+  margin-bottom: 1em;
+  color: config.$very-pale-orange;
+  .balance {
+    font-weight: config.$heavier-weight;
+  }
 }
 
 .history {
@@ -21,25 +26,38 @@
   align-items: center;
 
   .graph {
-    display: flex;
+   display: grid;
+   grid-template-columns: repeat(7,1fr);
+   text-align: center;
+  border-bottom: 1px solid config.$cream;
     .data {
       display: flex;
       flex-direction: column;
       justify-content: end;
       margin-right: 0.5rem;
       &__collumn {
-        width: 100%;
-        background: blue;
-        transform: rotate(180deg);
+        border-radius: 2px;
+        background: config.$soft-red;
       }
-      &__day {
-
+      &__bigest {
+        background: config.$cyan;
+      }
+      p {
+        color: config.$medium_brown;
       }
     }
   }
 
   &__month {
     display: flex;
-  justify-content: space-around;
+    &__last {
+    text-align: end;
+    }
   }
+}
+
+.month__text {
+
+  color: config.$medium-brown;
+   
 }

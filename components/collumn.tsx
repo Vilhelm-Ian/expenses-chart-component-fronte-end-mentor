@@ -1,12 +1,15 @@
 import styles from "../styles/Home.module.scss";
 
-const Collumn = ({ day, amount }) => {
+const Collumn = ({ day, amount, biggest }) => {
 	return (
 		<div className={styles.data}>
-			<div style={{ height: amount }} className={styles.data__collumn}>
-				.
-			</div>
-			<p className={styles.data__day}>{day}</p>
+			<div
+				style={{ height: amount * 2 }}
+				className={`${styles.data__collumn} ${
+					biggest ? styles.data__bigest : ""
+				}`}
+			></div>
+			<p>{day}</p>
 		</div>
 	);
 };

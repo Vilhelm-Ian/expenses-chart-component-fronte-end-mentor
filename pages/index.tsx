@@ -11,13 +11,18 @@ type spendingPerDay = {
 };
 
 const Home: NextPage = ({ data }) => {
-  const graph = useMemo(
-    () =>
-      data.map((element, index) => (
-        <Column day={element.day} amount={element.amount} key={index} />
-      )),
-    []
-  );
+  const graph = useMemo(() => {
+    let max = Math.max(...data.map((element) => element.amount));
+    return data.map((element, index) => (
+      <Column
+        day={element.day}
+        biggest={element.amount === max}
+        amount={element.amount}
+        key={index}
+      />
+    ));
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +34,7 @@ const Home: NextPage = ({ data }) => {
         <div className={styles.expense}>
           <div className={styles.expense__left}>
             <p>My balance</p>
-            <p className="balance">$900</p>
+            <p className={styles.balance}>$900</p>
           </div>
           <img src="/images/logo.svg"></img>
         </div>
@@ -40,12 +45,12 @@ const Home: NextPage = ({ data }) => {
           </div>
           <div className={styles.history__month}>
             <div className="history__month__this">
-              <p>Total this month</p>
+              <p className={styles.month__text}>Total this month</p>
               <p>$470</p>
             </div>
-            <div className="history__month__last">
-              <p>%</p>
-              <p>From last month</p>
+            <div className={styles.history__month__last}>
+              <p>2.4%</p>
+              <p className={styles.month__text}>From last month</p>
             </div>
           </div>
         </div>
