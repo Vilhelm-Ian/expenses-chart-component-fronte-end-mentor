@@ -5,9 +5,17 @@ import styles from "../styles/Home.module.scss";
 import { useMemo } from "react";
 import Column from "../components/collumn";
 
+type spendingPerDay = {
+  day: string;
+  value: number;
+};
+
 const Home: NextPage = ({ data }) => {
   const graph = useMemo(
-    () => data.map((element, index) => <Column key={index} />),
+    () =>
+      data.map((element, index) => (
+        <Column day={element.day} amount={element.amount} key={index} />
+      )),
     []
   );
   return (
@@ -27,13 +35,14 @@ const Home: NextPage = ({ data }) => {
         </div>
         <div className={styles.history}>
           <h2>Spending last 7 days</h2>
-          <div className="chart"></div>
+          <div className="chart">
+            <div className={styles.graph}>{graph}</div>
+          </div>
           <div className={styles.history__month}>
             <div className="history__month__this">
               <p>Total this month</p>
               <p>$470</p>
             </div>
-            <div className={styles.graph}>{graph}</div>
             <div className="history__month__last">
               <p>%</p>
               <p>From last month</p>

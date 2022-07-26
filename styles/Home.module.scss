@@ -18,6 +18,25 @@
   @include config.card;
   flex-direction: column;
   background: config.$very-pale-orange;
+  align-items: center;
+
+  .graph {
+    display: flex;
+    .data {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      margin-right: 0.5rem;
+      &__collumn {
+        width: 100%;
+        background: blue;
+        transform: rotate(180deg);
+      }
+      &__day {
+
+      }
+    }
+  }
 
   &__month {
     display: flex;
