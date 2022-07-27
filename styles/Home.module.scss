@@ -6,7 +6,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .expense {
@@ -29,33 +29,33 @@
   flex-direction: column;
   background: config.$very-pale-orange;
   .chart {
-   width: 100%;
-  .graph {
-   margin-top: 2em;
-   padding-bottom: 1em;
-   display: grid;
-   grid-template-columns: repeat(7,1fr);
-   text-align: center;
-  border-bottom: 2px solid config.$cream;
-    .data {
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      margin-right: 0.5rem;
-      &__collumn {
-        border-radius: 2px;
-        background: config.$soft-red;
-      }
-      &__bigest {
-        background: config.$cyan;
-      }
-      p {
-        font-size: 0.6rem;
-        color: config.$medium_brown;
+    width: 100%;
+    .graph {
+      margin-top: 2em;
+      padding-bottom: 1em;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      border-bottom: 2px solid config.$cream;
+      .data {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        margin-right: 0.5rem;
+        &__collumn {
+          border-radius: 8px;
+          background: config.$soft-red;
+        }
+        &__bigest {
+          background: config.$cyan;
+        }
+        p {
+          font-size: 0.6rem;
+          color: config.$medium_brown;
+        }
       }
     }
   }
-}
 
   &__month {
     margin-top: 1em;
@@ -63,16 +63,16 @@
     justify-content: space-between;
     width: 100%;
     &__last {
-    p {
-      margin: 0;
-    }
-    text-align: end;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    .last__month__percentage {
-      font-size: 0.9rem;
-    }
+      p {
+        margin: 0;
+      }
+      text-align: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      .last__month__percentage {
+        font-size: 0.9rem;
+      }
     }
   }
 }
@@ -86,4 +86,3 @@
   font-size: 1.7rem;
   margin: 0;
 }
- 
