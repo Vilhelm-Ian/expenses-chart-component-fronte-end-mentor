@@ -7,13 +7,15 @@ import Column from "../components/collumn";
 
 type spendingPerDay = {
   day: string;
-  value: number;
+  amount: number;
 };
 
-const Home: NextPage = ({ data }) => {
+const Home = ({ data }: { data: spendingPerDay[] }) => {
   const graph = useMemo(() => {
-    let max = Math.max(...data.map((element) => element.amount));
-    return data.map((element, index) => (
+    let max = Math.max(
+      ...data.map((element: spendingPerDay) => element.amount)
+    );
+    return data.map((element: spendingPerDay, index: number) => (
       <Column
         day={element.day}
         biggest={element.amount === max}
