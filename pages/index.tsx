@@ -38,7 +38,7 @@ const Home = ({ data }: { data: spendingPerDay[] }) => {
             <p className={styles.expense__text}>My balance</p>
             <p className={styles.balance}>$921.48</p>
           </div>
-          <img src="/images/logo.svg"></img>
+          <img alt="logo" src="/images/logo.svg"></img>
         </div>
         <div className={styles.history}>
           <h2>Spending last 7 days</h2>
