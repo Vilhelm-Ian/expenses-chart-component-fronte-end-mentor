@@ -1,7 +1,8 @@
 @use "config";
 
 .container {
-  width: 90%;
+  width: 95%;
+  max-width: 540px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -10,10 +11,14 @@
 
 .expense {
   @include config.card;
-  justify-content: space-around;
+  justify-content: space-between;
   background: config.$soft-red;
   margin-bottom: 1em;
   color: config.$very-pale-orange;
+  &__text {
+    font-size: 0.6rem;
+  }
+
   .balance {
     font-weight: config.$heavier-weight;
   }
@@ -23,13 +28,15 @@
   @include config.card;
   flex-direction: column;
   background: config.$very-pale-orange;
-  align-items: center;
-
+  .chart {
+   width: 100%;
   .graph {
+   margin-top: 2em;
+   padding-bottom: 1em;
    display: grid;
    grid-template-columns: repeat(7,1fr);
    text-align: center;
-  border-bottom: 1px solid config.$cream;
+  border-bottom: 2px solid config.$cream;
     .data {
       display: flex;
       flex-direction: column;
@@ -43,21 +50,40 @@
         background: config.$cyan;
       }
       p {
+        font-size: 0.6rem;
         color: config.$medium_brown;
       }
     }
   }
+}
 
   &__month {
+    margin-top: 1em;
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     &__last {
+    p {
+      margin: 0;
+    }
     text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    .last__month__percentage {
+      font-size: 0.9rem;
+    }
     }
   }
 }
 
 .month__text {
-
+  font-size: 0.9rem;
   color: config.$medium-brown;
-   
 }
+
+.month__spending {
+  font-size: 1.7rem;
+  margin: 0;
+}
+ 

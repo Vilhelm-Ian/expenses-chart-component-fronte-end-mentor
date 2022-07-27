@@ -33,23 +33,23 @@ const Home: NextPage = ({ data }) => {
       <div className={styles.container}>
         <div className={styles.expense}>
           <div className={styles.expense__left}>
-            <p>My balance</p>
-            <p className={styles.balance}>$900</p>
+            <p className={styles.expense__text}>My balance</p>
+            <p className={styles.balance}>$921.48</p>
           </div>
           <img src="/images/logo.svg"></img>
         </div>
         <div className={styles.history}>
           <h2>Spending last 7 days</h2>
-          <div className="chart">
+          <div className={styles.chart}>
             <div className={styles.graph}>{graph}</div>
           </div>
           <div className={styles.history__month}>
             <div className="history__month__this">
               <p className={styles.month__text}>Total this month</p>
-              <p>$470</p>
+              <p className={styles.month__spending}>$478.33</p>
             </div>
             <div className={styles.history__month__last}>
-              <p>2.4%</p>
+              <p className={styles.last__month__percentage}>+2.4%</p>
               <p className={styles.month__text}>From last month</p>
             </div>
           </div>
@@ -60,11 +60,11 @@ const Home: NextPage = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-  let res = await fetch("http:localhost:3000/api/data");
+  let res = await fetch(`${process.env.URL}/api/data`);
   let data = await res.json();
 
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data },
   };
 }
 
