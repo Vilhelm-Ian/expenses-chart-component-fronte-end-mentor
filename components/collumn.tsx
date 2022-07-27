@@ -1,6 +1,14 @@
 import styles from "../styles/Home.module.scss";
 
-const Collumn = ({ day, amount, biggest }) => {
+const Collumn = ({
+	day,
+	amount,
+	biggest,
+}: {
+	day: string;
+	amount: number;
+	biggest: boolean;
+}) => {
 	return (
 		<div className={styles.data}>
 			<div

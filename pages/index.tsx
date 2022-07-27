@@ -23,7 +23,7 @@ const Home = ({ data }: { data: spendingPerDay[] }) => {
         key={index}
       />
     ));
-  }, []);
+  }, [data]);
 
   return (
     <div className={styles.container}>
